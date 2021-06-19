@@ -10,7 +10,7 @@ public class demo {
 		System.out.println("Number of snakes: ");
 		int numberOfSnakes = scanner.nextInt();
 		
-		ArrayList<ArrayList<Integer> > snakes = new ArrayList<ArrayList<Integer> >();
+		List<Snake> snakes = new ArrayList<Snake>();
 		for(int i = 0;i < numberOfSnakes; i++) {
 			System.out.println("Head of snake "+i+":");
 			int head = scanner.nextInt();
@@ -18,13 +18,14 @@ public class demo {
 			System.out.println("Tail of snake "+i+":");
 			int tail = scanner.nextInt();
 			
-			snakes.add(i,new ArrayList<Integer>(Arrays.asList(head,tail)));
+			Snake s = new Snake(head,tail);
+			snakes.add(s);
 		}
 		
 		System.out.println("Number of ladders: ");
 		int numberOfLadders = scanner.nextInt();
 		
-		ArrayList<ArrayList<Integer> > ladders = new ArrayList<ArrayList<Integer> >();
+		List<Ladder> ladders = new ArrayList<Ladder>();
 		for(int i = 0;i < numberOfLadders; i++) {
 			System.out.println("Start of ladder "+i+":");
 			int start = scanner.nextInt();
@@ -32,10 +33,11 @@ public class demo {
 			System.out.println("End of ladder "+i+":");
 			int end = scanner.nextInt();
 			
-			ladders.add(i,new ArrayList<Integer>(Arrays.asList(start,end)));
+			Ladder l = new Ladder(start,end);
+			ladders.add(l);
 		}
 		
-		Board board = new Board(size,snakes,ladders);
+//		Board board = new Board(size,snakes,ladders);
 		
 		System.out.println("Enter number of players: ");
 		int n = scanner.nextInt();
@@ -44,10 +46,10 @@ public class demo {
 		for(int i = 0;i < n; i++) {
 			System.out.println("Enter player name: ");
 			String s = scanner.nextLine();
-			players.add(new Player(s));
+//			players.add(new Player(s));
 		}
 		
-		Game game = new Game(board,players);
-		game.executeGame();
+//		Game game = new Game(board,players);
+//		game.executeGame();
 	}
 }
